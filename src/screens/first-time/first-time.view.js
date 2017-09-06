@@ -8,26 +8,20 @@ import {
   View
 } from 'react-native';
 
-import { getStore, store } from '../index';
-import { intialActionCreator } from '../../actions/initial.action';
-
 export default class Two extends Component {
-  componentDidMount() {
-    getStore();
-    store.dispatch(intialActionCreator('Another World'));
-    getStore();
-  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          two screen
+          First time app launch
+          First time user
+          Create your password
         </Text>
         <Button
           onPress={this._toOne}
-          title="Learn More"
+          title="create your password"
           color="#841584"
-          accessibilityLabel="Learn more about this purple button"
+          accessibilityLabel="create your password"
         />
       </View>
     );
@@ -45,13 +39,5 @@ export default class Two extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'blue',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   },
 });
