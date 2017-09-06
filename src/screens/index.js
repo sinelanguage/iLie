@@ -8,11 +8,9 @@ import { intialActionCreator } from '../actions/initial.action';
 export const store = configureStore(initalState);
 export const getStore = () => console.log('STORE: ', store.getState(), store);
 
-import One from './one/one.view';
-import Two from './two/two.view';
+import FirstTimeLaunch from './first-time/first-time.view';
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
-  Navigation.registerComponent('example.One', () => One, store, Provider);
-  Navigation.registerComponent('example.Two', () => Two, store, Provider);
+  Navigation.registerComponent('view.first-time', () => FirstTimeLaunch, store, Provider);
 }

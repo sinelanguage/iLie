@@ -5,8 +5,8 @@ registerScreens();
 
 Navigation.startSingleScreenApp({
   screen: {
-    screen: 'example.One',
-    title: 'Welcome',
+    screen: 'view.first-time',
+    title: 'Let\'s Begin',
     navigatorStyle: {},
     navigatorButtons: {}
   },
