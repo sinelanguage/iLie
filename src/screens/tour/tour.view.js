@@ -8,24 +8,13 @@ import {
   View
 } from 'react-native';
 
-export default class FirstTimeLaunch extends Component {
+export default class Tour extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>
-          First time app launch
+          Take tour
         </Text>
-        <Text>
-          First time user
-        </Text>
-        <Text>
-          Create your password
-        </Text>
-        <Button
-          onPress={this._navigateToTour}
-          title="create your password"
-          accessibilityLabel="create your password"
-        />
         <Button
           onPress={this._navigateToEnterLie}
           title="record a lie"
@@ -33,15 +22,6 @@ export default class FirstTimeLaunch extends Component {
         />
       </View>
     );
-  }
-  _navigateToTour = () => {
-    this.props.navigator.resetTo({
-      screen: 'view.tour',
-      title: 'Getting started',
-      passProps: {},
-      animated: true,
-      animationType: 'fade',
-    });
   }
   _navigateToEnterLie = () => {
     this.props.navigator.resetTo({

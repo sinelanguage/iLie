@@ -26,7 +26,6 @@ export default class One extends Component {
         <Button
           onPress={this._toTwo}
           title="Learn More"
-          color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
       </View>
