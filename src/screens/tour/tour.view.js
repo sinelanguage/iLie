@@ -16,14 +16,14 @@ export default class Tour extends Component {
           Take tour
         </Text>
         <Button
-          onPress={this._navigateToEnterLie}
+          onPress={this._navigateToRecordLie}
           title="record a lie"
           accessibilityLabel="create your password"
         />
       </View>
     );
   }
-  _navigateToEnterLie = () => {
+  _navigateToRecordLie = () => {
     this.props.navigator.resetTo({
       screen: 'view.lie',
       title: 'I lied',

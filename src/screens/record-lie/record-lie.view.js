@@ -16,19 +16,19 @@ export default class RecordLie extends Component {
           Record a lie
         </Text>
         <Button
-          onPress={this._navigateToEnterLie}
-          title="record a lie"
-          accessibilityLabel="create your password"
+          onPress={this._navigateToReason}
+          title="record a reason"
+          accessibilityLabel="record a reason"
         />
       </View>
     );
   }
-  _navigateToEnterLie = () => {
-    this.props.navigator.resetTo({
-      screen: 'view.lie',
+  _navigateToReason = () => {
+    this.props.navigator.push({
+      screen: 'view.reason',
       passProps: {},
       animated: true,
-      animationType: 'fade',
+      backButtonHidden: true,
     });
   }
 }
