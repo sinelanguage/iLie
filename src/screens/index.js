@@ -5,9 +5,6 @@ import configureStore from '../store/configure.store';
 import { initalState } from '../store/initial.state';
 import { intialActionCreator } from '../actions/initial.action';
 
-export const store = configureStore(initalState);
-export const getStore = () => console.log('STORE: ', store.getState(), store);
-
 import FirstTimeLaunch from './first-time/first-time.view';
 import Tour from './tour/tour.view';
 import RecordLie from './record-lie/record-lie.view';
@@ -22,3 +19,6 @@ export function registerScreens() {
   Navigation.registerComponent('view.reason', () => Reason, store, Provider);
   Navigation.registerComponent('view.login', () => Login, store, Provider);
 }
+
+export const store = configureStore(initalState);
+export const getStore = () => console.log('STORE: ', store.getState(), store);
