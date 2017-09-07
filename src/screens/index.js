@@ -10,6 +10,9 @@ import Tour from './tour/tour.view';
 import RecordLie from './record-lie/record-lie.view';
 import Reason from './reason/reason.view';
 import Login from './login/login.view';
+import Data from './data/data.view';
+import Chart from './data/chart/chart.view';
+import Timeline from './data/timeline/timeline.view';
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
@@ -18,6 +21,9 @@ export function registerScreens() {
   Navigation.registerComponent('view.lie', () => RecordLie, store, Provider);
   Navigation.registerComponent('view.reason', () => Reason, store, Provider);
   Navigation.registerComponent('view.login', () => Login, store, Provider);
+  Navigation.registerComponent('view.data', () => Data, store, Provider);
+  Navigation.registerComponent('view.chart', () => Chart, store, Provider);
+  Navigation.registerComponent('view.timeline', () => Timeline, store, Provider);
 }
 
 export const store = configureStore(initalState);

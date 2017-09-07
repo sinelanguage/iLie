@@ -17,8 +17,13 @@ export default class Login extends Component {
         </Text>
         <Button
           onPress={this._navigateToEnterLie}
-          title="record a another lie"
-          accessibilityLabel="record a another lie"
+          title="record a lie"
+          accessibilityLabel="record a lie"
+        />
+        <Button
+          onPress={this._navigateToData}
+          title="view data"
+          accessibilityLabel="view data"
         />
       </View>
     );
@@ -26,6 +31,15 @@ export default class Login extends Component {
   _navigateToEnterLie = () => {
     this.props.navigator.resetTo({
       screen: 'view.lie',
+      passProps: {},
+      animated: true,
+      animationType: 'fade',
+    });
+  }
+  _navigateToData = () => {
+    this.props.navigator.resetTo({
+      screen: 'view.data',
+      title: 'Your Bullsh*t Data',
       passProps: {},
       animated: true,
       animationType: 'fade',

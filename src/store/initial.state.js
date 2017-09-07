@@ -1,3 +1,5 @@
+// @flow
+
 export const initalState = {
   hello: 'Hello',
   world: 'World',
