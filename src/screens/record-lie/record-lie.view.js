@@ -20,6 +20,11 @@ export default class RecordLie extends Component {
           title="record a reason"
           accessibilityLabel="record a reason"
         />
+        <Button
+          onPress={this._navigateToData}
+          title="view data"
+          accessibilityLabel="view data"
+        />
       </View>
     );
   }
@@ -29,6 +34,15 @@ export default class RecordLie extends Component {
       passProps: {},
       animated: true,
       backButtonHidden: true,
+    });
+  }
+  _navigateToData = () => {
+    this.props.navigator.resetTo({
+      screen: 'view.data',
+      title: 'Your Bullsh*t Data',
+      passProps: {},
+      animated: true,
+      animationType: 'fade',
     });
   }
 }

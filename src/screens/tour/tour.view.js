@@ -16,17 +16,18 @@ export default class Tour extends Component {
           Take tour
         </Text>
         <Button
-          onPress={this._navigateToRecordLie}
-          title="record a lie"
-          accessibilityLabel="create your password"
+          onPress={this._navigateToLogin}
+          title="login"
+          accessibilityLabel="login"
         />
       </View>
     );
   }
-  _navigateToRecordLie = () => {
+
+  _navigateToLogin = () => {
     this.props.navigator.resetTo({
-      screen: 'view.lie',
-      title: 'I lied',
+      screen: 'view.login',
+      title: 'Login',
       passProps: {},
       animated: true,
       animationType: 'fade',

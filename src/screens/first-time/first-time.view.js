@@ -27,11 +27,6 @@ export default class FirstTimeLaunch extends Component {
           accessibilityLabel="create your password"
         />
         <Button
-          onPress={this._navigateToRecordLie}
-          title="record a lie"
-          accessibilityLabel="record a lie"
-        />
-        <Button
           onPress={this._navigateToLogin}
           title="login"
           accessibilityLabel="login"
@@ -43,15 +38,6 @@ export default class FirstTimeLaunch extends Component {
     this.props.navigator.resetTo({
       screen: 'view.tour',
       title: 'Getting started',
-      passProps: {},
-      animated: true,
-      animationType: 'fade',
-    });
-  }
-  _navigateToRecordLie = () => {
-    this.props.navigator.resetTo({
-      screen: 'view.lie',
-      title: 'I lied',
       passProps: {},
       animated: true,
       animationType: 'fade',
