@@ -1,25 +1,23 @@
 import React from 'react';
 
 import {
+  View,
   StyleSheet,
   Image,
 } from 'react-native';
 
 export const GridLines = () => (
-  <Image
-    style={styles.gridLines}
-    source={require('../../../assets/img/splash/grid-lines.png')}
-  />
+  <View style={styles.container}>
+
+  </View>
 )
 
 const styles = StyleSheet.create({
-
-  gridLines: {
-    position: 'absolute',
+  container: {
+    backgroundColor: 'red',
     zIndex: 1,
-    top: 10,
-    left: -15,
-    opacity: 0.25,
-  }
+    ...StyleSheet.absoluteFillObject,
+    width: 20,
+  },
 
 })

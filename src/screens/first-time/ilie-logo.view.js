@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     zIndex: 4,
     top: '30%',
     left: '30%',
-    width: '25%',
-    height: '25%',
+    width: 235,
+    height: 129,
     resizeMode: 'contain',
   }
 

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
     top: '63%',
     left: 0,
-    width: 150,
+    width: 130,
     resizeMode: 'contain',
   }
 

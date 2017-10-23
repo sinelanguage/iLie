@@ -47,9 +47,9 @@ export default class FirstTimeLaunch extends Component {
         />
         </View>*/}
           <GridLines />
-          <GraphLine />
+          {/*<GraphLine />
           <HonestlyTracking />
-          <ILieLogo />
+          <ILieLogo />*/}
       </View>
     );
   }
