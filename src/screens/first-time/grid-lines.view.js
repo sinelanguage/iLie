@@ -1,41 +1,82 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Dimensions, Text} from 'react-native';
 
-import {
-  View,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
-export const GridLines = () => {
-  renderGroupOfTicks = () => {
+const {height: screenHeight, width: screenWidth} = Dimensions.get('screen');
+const tickCoverage = screenHeight - 100;
+
+
+export default class GridLines extends Component {
+
+  state = {
+    tickHeight: 0
+  }
+
+  renderShorterTicks = () => {
     const ticks = [];
     for (let index = 0; index < 10; index++) {
-      ticks.push(<View key={index} style={styles.tick}></View>) 
+      ticks.push(
+        <View key={Math.random()} style={styles.tick}></View>
+      )
     };
-    ticks.push(<View key={index} style={styles.widerTick}></View>)
-    return ticks
+    return ticks;
   }
-  renderWiderTicks = () => {
+
+  renderGroupOfTicks = () => {
     const ticks = [];
-    for (let index = 0; index < 100; index++) {
-      ticks.push(<View key={index} style={styles.tick}></View>) 
-    };
+    const widerTick = (
+      <View key={Math.random()} style={styles.widerTick}></View>
+    )
+    ticks.push([this.renderShorterTicks(), widerTick])
     return ticks
   }
 
-  return (
-    <View style={styles.container}>
-      {renderTicks()} 
-    </View>
-  )
+  renderAllTicks = () => {
+    let totalHeight = 0;
+    let allTicks = [];
+
+    const addGroupOfTicks = () => {
+      allTicks.push(this.renderGroupOfTicks());
+      totalHeight += this.state.viewHeight;
+      makeAllTicks();
+    }
+
+    const makeAllTicks = () => {
+      if (totalHeight < (tickCoverage - this.state.viewHeight)) {
+        addGroupOfTicks();
+      };
+    };
+
+    makeAllTicks();
+
+    return allTicks
+  }
+
+  onLayout = e => {
+    this.setState({viewHeight: e.nativeEvent.layout.height})
+  }
+
+  render() {
+    console.log("hello")
+    return (
+      <View style={styles.container}>
+        <View onLayout={this.onLayout}>{this.renderGroupOfTicks()}</View>
+        {this.renderAllTicks()}
+        <Text>HELLO</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    zIndex: 1,
-    ...StyleSheet.absoluteFillObject,
     width: 40,
     flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    height: tickCoverage,
+    overflow: 'hidden'
   },
   tick: {
     backgroundColor: 'white',

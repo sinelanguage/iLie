@@ -10,17 +10,18 @@ import {
   Dimensions,
 } from 'react-native';
 
-import { GridLines } from './grid-lines.view';
+import GridLines from './grid-lines.view';
 import { GraphLine } from './graph-line.view';
 import { HonestlyTracking } from './honestly-tracking.view';
 import { ILieLogo } from './ilie-logo.view';
 
+
+const { height, width } = Dimensions.get('window');
 export default class FirstTimeLaunch extends Component {
   static navigatorStyle = {
     navBarHidden: true
   };
   render() {
-    const { height, width } = Dimensions.get('window');
     return (
       <View style={styles.container}>
         {/*<View style={[
@@ -76,7 +77,8 @@ export default class FirstTimeLaunch extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#263238'
+    backgroundColor: '#263238',
+    justifyContent: 'center',
   },
   nested: {
     backgroundColor: 'transparent',
