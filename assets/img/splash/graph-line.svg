@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="398px" height="841px" viewBox="0 0 398 841" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>graph-line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Blank-Slate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.500452899">
+        <g id="Splash" transform="translate(-242.000000, -143.000000)" stroke="#FFFFFF" stroke-width="0.5">
+            <path d="M242.640625,698.742188 L278.023438,808.421875 C278.023438,808.421875 294.404768,762.232378 302.595434,739.13763 C307.370914,725.672483 316.921875,698.742188 316.921875,698.742188 L331.421875,737.914062 L363.203125,641.007812 L439.359375,983.421875 L599.101562,143.320312 L753.296875,796.664062 L794.1875,592.554688 L830.054687,764.46875 L863.390625,651.507812 L873.117187,695.875 L904.648437,548.460938 L920.375,584.773438" id="graph-line"></path>
+        </g>
+    </g>
+</svg>
