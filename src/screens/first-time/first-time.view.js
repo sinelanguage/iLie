@@ -3,24 +3,29 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Button,
   Text,
   View,
   ImageBackground,
   Dimensions,
 } from 'react-native';
 
-import GridLines from './grid-lines.view';
-import { GraphLine } from './graph-line.view';
-import { HonestlyTracking } from './honestly-tracking.view';
-import { ILieLogo } from './ilie-logo.view';
-
+import { GridLines } from './components/grid-lines.view';
+import { GraphLine } from './components/graph-line.view';
+import { HonestlyTracking } from './components/honestly-tracking.view';
+import { ILieLogo } from './components/ilie-logo.view';
+import Button from '../../components/button';
+import COLORS from '../../constants/colors';
 
 const { height, width } = Dimensions.get('window');
 export default class FirstTimeLaunch extends Component {
   static navigatorStyle = {
     navBarHidden: true
   };
+  
+  state = {
+    hasAccount: false,
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -48,9 +53,10 @@ export default class FirstTimeLaunch extends Component {
         />
         </View>*/}
           <GridLines />
-          {/*<GraphLine />
+          <GraphLine />
           <HonestlyTracking />
-          <ILieLogo />*/}
+          <ILieLogo />
+          {this._whichButtonToRender()}
       </View>
     );
   }
@@ -72,15 +78,51 @@ export default class FirstTimeLaunch extends Component {
       animationType: 'fade',
     });
   }
+
+  _renderCreatePasswordButton = () => (
+    <Button
+      onPress={this._navigateToTour}
+      buttonText="Create Password"
+    />
+  )
+
+  _renderLoginButton = () => (
+    <Button
+      onPress={this._navigateToLogin}
+      buttonText="Login"
+    />
+  )
+
+  _whichButtonToRender = () => {
+    const { hasAccount } = this.state;
+    return (
+      <View style={styles.buttonContainerWrapper}>
+        <View style={styles.buttonContainerFlexSpacer}></View>
+        <View style={styles.buttonContainer}>
+          {hasAccount ? this._renderLoginButton() : this._renderCreatePasswordButton()}
+        </View>
+      </View>
+    )
+    
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#263238',
-    justifyContent: 'center',
   },
-  nested: {
-    backgroundColor: 'transparent',
-  }
+  buttonContainerWrapper: {
+    ...StyleSheet.absoluteFillObject,
+    flexDirection: 'column',
+    zIndex: 10,
+  },
+  buttonContainerFlexSpacer: {
+    flex: 2,
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
