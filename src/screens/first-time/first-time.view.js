@@ -29,29 +29,6 @@ export default class FirstTimeLaunch extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/*<View style={[
-          styles.nested
-        ]}>
-        <Text>
-          First time app launch
-        </Text>
-        <Text>
-          First time user
-        </Text>
-        <Text>
-          Create your password
-        </Text>
-        <Button
-          onPress={this._navigateToTour}
-          title="create your password"
-          accessibilityLabel="create your password"
-        />
-        <Button
-          onPress={this._navigateToLogin}
-          title="login"
-          accessibilityLabel="login"
-        />
-        </View>*/}
           <GridLines />
           <GraphLine />
           <HonestlyTracking />
@@ -63,7 +40,7 @@ export default class FirstTimeLaunch extends Component {
   _navigateToTour = () => {
     this.props.navigator.resetTo({
       screen: 'view.tour',
-      title: 'Getting started',
+      title: 'SIGN UP',
       passProps: {},
       animated: true,
       animationType: 'fade',
@@ -82,7 +59,7 @@ export default class FirstTimeLaunch extends Component {
   _renderCreatePasswordButton = () => (
     <Button
       onPress={this._navigateToTour}
-      buttonText="Create Password"
+      buttonText="Create your profile"
     />
   )
 
@@ -110,7 +87,7 @@ export default class FirstTimeLaunch extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#263238',
+    backgroundColor: COLORS.darkBlueGrey,
   },
   buttonContainerWrapper: {
     ...StyleSheet.absoluteFillObject,
