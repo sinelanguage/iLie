@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   textInputView: {
-    borderBottomColor: "white",
+    borderBottomColor: "rgba(255,255,255,0.5)",
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingBottom: 15,  
+    paddingBottom: 11,  
     width: '80%',
   }
 })

@@ -38,12 +38,11 @@ export default class FirstTimeLaunch extends Component {
     );
   }
   _navigateToTour = () => {
-    this.props.navigator.resetTo({
+    this.props.navigator.push({
       screen: 'view.tour',
       title: 'SIGN UP',
       passProps: {},
       animated: true,
-      animationType: 'fade',
     });
   }
   _navigateToLogin = () => {
@@ -52,7 +51,6 @@ export default class FirstTimeLaunch extends Component {
       title: 'Login',
       passProps: {},
       animated: true,
-      animationType: 'fade',
     });
   }
 
