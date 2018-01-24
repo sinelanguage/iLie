@@ -15,10 +15,12 @@ import { HonestlyTracking } from './components/honestly-tracking.view';
 import { ILieLogo } from './components/ilie-logo.view';
 import Button from '../../components/button';
 import COLORS from '../../constants/colors';
+import defaultNavigatorStyle from '../../constants/navigator.styles';
 
 const { height, width } = Dimensions.get('window');
 export default class FirstTimeLaunch extends Component {
   static navigatorStyle = {
+    ...defaultNavigatorStyle,
     navBarHidden: true
   };
   
@@ -43,6 +45,7 @@ export default class FirstTimeLaunch extends Component {
       title: 'SIGN UP',
       passProps: {},
       animated: true,
+      backButtonHidden: true,
     });
   }
   _navigateToLogin = () => {
@@ -51,6 +54,7 @@ export default class FirstTimeLaunch extends Component {
       title: 'Login',
       passProps: {},
       animated: true,
+      backButtonHidden: true,
     });
   }
 
